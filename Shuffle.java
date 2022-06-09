@@ -110,12 +110,14 @@ public class Shuffle {
                         String guess = input.next();
                         correct = guessWord(guess);
                     }
-                    System.out.println("Would you like to play again?");
-                    userResponse = input.next();
-                    if (userResponse.equals("no")) {
+
+                    if (correct) {
+                        System.out.println("Would you like to play again?");
+                        userResponse = input.next();
+                        correct = false;
+                    } else if (userResponse.equals("no")) {
                         run = false;
                     }
-
 
                 }
             }
